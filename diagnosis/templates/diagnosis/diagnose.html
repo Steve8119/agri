@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Diagnosis</title>
+</head>
+<body>
+    <h1>Animal Problem Diagnosis</h1>
+    <form method="post">
+        {% csrf_token %}
+        <textarea name="problem_description" rows="5" cols="40" placeholder="Describe the animal's problem"></textarea><br>
+        <button type="submit">Diagnose</button>
+    </form>
+    {% if diagnosis %}
+        <h2>Diagnosis and Treatment</h2>
+        <p>{{ diagnosis }}</p>
+    {% endif %}
+</body>
+</html>
